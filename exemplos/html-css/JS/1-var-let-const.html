@@ -26,6 +26,41 @@
 <html lang="pt-BR">
   <head>
     <script>
+      // 1. Declaração de variáveis com var
+      var nome = "João";
+      let idade = 30;
+      // console.log(nome); // 
+      // hosting: var é içada, let não
+      //  - Redeclaração e reatribuição
+      nome = "Maria"; // Redeclaração e reatribuição
+      var nome = "Ana"; // Redeclaração
+      idade = 31; // Reatribuição
+      console.log(nome); // Maria
+      
+      // let idade = 32; // Erro: let não permite redeclaração no mesmo escopo
+      console.log(idade); // 31
+      //  - Escopo de var (global / função, não respeita bloco)
+
+
+      // 3. Declaração de constantes com const
+      const nomeConst = "Carlos";
+      const idadeConst = 25;
+      //   - Não pode reatribuir
+      //     - Escopo de const (respeita bloco)
+      //   - Possibilidade de declarar com o mesmo nome em blocos diferentes
+
+      const numero = 10;
+      const texto = "Texto";
+      const booleano = true;
+
+      // 4. typeof para verificar tipos das variáveis
+      console.log(typeof nome); // string
+      console.log(typeof idade); // number
+      console.log(typeof booleano); // string
+
+      if(typeof nome === "string") {
+        console.log("nome é uma string");
+      }
       
     </script>
   </head>
