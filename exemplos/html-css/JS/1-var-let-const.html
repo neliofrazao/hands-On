@@ -1,56 +1,30 @@
 <!-- var -->
 <!-- let -->
 <!-- const -->
+<!-- Índice de Tópicos
+
+1. Declaração de variáveis com var
+- Redeclaração e reatribuição
+- Escopo de var (global/função, não respeita bloco)
+
+2. Declaração de variáveis com let
+- Ratribuição
+- Escopo de let (respeita bloco)
+
+3. Declaração de constantes com const
+- Não pode reatribuir
+- Escopo de const (respeita bloco)
+- Possibilidade de declarar com o mesmo nome em blocos diferentes
+
+4. typeof para verificar tipos das variáveis
+5. Diferença de escopo entre var, let e const
+6. Erros comuns (ex: tentar reatribuir const, acessar variável fora do escopo) -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <script>
-      var nomeDaVariavelAntiga = 'Texto'
-      // console.log('nomeDaVariavelAntiga', nomeDaVariavelAntiga)
-      nomeDaVariavelAntiga = 'Novo Valor'
-      // console.log('tipoString', typeof(nomeDaVariavelAntiga))
-      nomeDaVariavelAntiga = 3
-      // console.log('tipoNumber', typeof(nomeDaVariavelAntiga));]
-      var nomeDaVariavelAntiga = 'Novo Texto Value' 
-
-      let nomeDaVariavel = 'texto'
-      // console.log('let', typeof(nomeDaVariavel))
-      nomeDaVariavel = 'Novo Valor';
-      // console.log(nomeDaVariavel);
-
-      {
-        var nomeDaVariavelAntiga = 'Texto'
-        console.log('nomeDaVariavelAntiga', nomeDaVariavelAntiga)
-        let getText = 'Pega uma texto';
-        console.log('getTextEscopo1', getText)
-      }
-
-      {
-        var nomeDaVariavelAntiga = 'Novo Texto'
-        console.log('nomeDaVariavelAntiga', nomeDaVariavelAntiga)
-        let getText = 'Pega um novo texto';
-        console.log('getTextEscopo2', getText)
-      } //var não respeita espoco
-
-      // console.log('ResultadoFinal', nomeDaVariavelAntiga)
-
-      // console.log('ResultadoFinal', getText) // não existe
-
-      const minhaConstante = 'Minha constante';
-
-      minhaConstante = 'Novo Valor'
-
-      {
-        const minhaConstante = 'Minha constante';
-      } // Posso repetir o nome da constante debtro do escpo da função
-
-      {
-        const minhaConstante = 'Minha constante';
-      }
-
-      console.log(minhaConstante)
       
-
     </script>
   </head>
   <body>      
