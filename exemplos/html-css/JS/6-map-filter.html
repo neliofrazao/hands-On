@@ -59,8 +59,19 @@
           { nome: "Eduarda", idade: 25, profissao: "Médica" }
         ];
         // Desafio: Percorrer o array e adicionar 5 anos a cada idade
-       
-
+       const pessoasComMais5Anos = pessoas.map((pessoa) => {
+          return { ...pessoa, idade: pessoa.idade + 5 };
+        });
+        console.log(pessoasComMais5Anos); // [{ nome: "Ana", idade: 27, profissao: "Engenheira" }, { nome: "Bruno", idade: 22, profissao: "Estudante" }, { nome: "Carla", idade: 24, profissao: "Designer" }, { nome: "Diego", idade: 21, profissao: "Estudante" }, { nome: "Eduarda", idade: 30, profissao: "Médica" }]
+      //forma 2
+        const pessoasComMais5Anos2 = pessoas.map((pessoa) => {
+          return {
+            nome: pessoa.nome,
+            profissao: pessoa.profissao,
+            idade: pessoa.idade + 5 
+          };
+        });
+        console.log(pessoasComMais5Anos2); // [{ nome: "Ana", idade: 27, profissao: "Engenheira" }, { nome: "Bruno", idade: 22, profissao: "Estudante" }, { nome: "Carla", idade: 24, profissao: "Designer" }, { nome: "Diego", idade: 21, profissao: "Estudante" }, { nome: "Eduarda", idade: 30, profissao: "Médica" }]
       </script>
   </head>
   <body>      
