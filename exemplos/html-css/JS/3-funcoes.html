@@ -20,6 +20,58 @@
 <html lang="pt-BR">
   <head>
     <script>
+//       1. Como criar uma função
+         function minhaFuncao(nome, idade, comidaFavorita) {
+           console.log("Esta é uma função simples.", nome, idade, comidaFavorita);
+           return `Olá, meu nome é ${nome}, tenho ${idade} anos e minha comida favorita é ${comidaFavorita}.`;
+         }
+         minhaFuncao('Nélio', 20, 'Pizza'); // Chamada da função
+
+         function pessoa({nome, idade, comidaFavorita}) {
+           console.log("Esta é uma função simples.", nome, idade, comidaFavorita);
+         }
+        pessoa({ comidaFavorita: 'Pizza', nome: 'Nélio', idade: 20}); // Chamada da função com objeto
+
+//         2. Armazenando o resultado da função em uma constante
+          const resultado = minhaFuncao('Nélio', 20, 'Pizza');
+          console.log(resultado); 
+//         3. Função de callback
+          function callbackExemplo(callback, numero1, numero2) {
+            console.log("Executando a função de callback...");
+            const novoValor = callback(numero1, numero2) +1 ;
+            console.log("Resultado da função de callback:", novoValor.toString());
+          }
+          
+          function somaSimples(numero1, numero2) {
+            const soma = numero1 + numero2;
+            return soma
+          }
+
+          callbackExemplo(somaSimples, 1, 2);
+
+//         4. Função anônima
+          const funcaoAnonima = function(nome, idade) {
+            console.log(`Olá, meu nome é ${nome} e tenho ${idade} anos.`);
+          };
+          funcaoAnonima('Nélio', 20); // Chamada da função anônima
+//         5. Arrow function
+          const arrowFunction = (nome, idade) => {
+            console.log(`Olá, meu nome é ${nome} e tenho ${idade} anos.`);
+          };
+          arrowFunction('Nélio', 20); // Chamada da arrow function
+// 5.1 Arrow function com retorno implícito
+           const retornoImplicito = (nome, idade) => 'Olá, meu nome é ' + nome + ' e tenho ' + idade + ' anos.';
+           const retornoImplicito2 = (nome, idade) => {
+              return `Olá, meu nome é ${nome} e tenho ${idade} anos.`;
+           };
+            console.log(retornoImplicito('Nélio', 20)); // Chamada da arrow function com retorno implícito
+//         6. Function e destructuring
+//         7. Template string
+          const templateString = (nome, idade) => {
+            const exemploSemTemplate = 'Olá, meu nome é ' + nome + ' e tenho ' + idade + ' anos.';
+            return `Olá, meu nome é ${nome ? nome : 'sem nome'} e tenho ${idade} anos.`;
+          };
+          console.log(templateString(undefined, 22)); // Chamada da função com template string
      
     </script>
   </head>

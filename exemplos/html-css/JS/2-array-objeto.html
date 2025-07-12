@@ -1,9 +1,12 @@
 <!--
-Um array em JavaScript é uma estrutura de dados que armazena uma coleção ordenada de valores. 
-Esses valores podem ser de qualquer tipo: números, strings, booleanos, objetos, funções, até outros arrays.
+Um array em JavaScript é uma estrutura de dados que armazena uma coleção 
+ordenada de valores. 
+Esses valores podem ser de qualquer tipo: números, strings, booleanos, 
+objetos, funções, até outros arrays.
 
 Analogia:
-Pense em um array como uma fila de caixas numeradas, onde cada caixa pode guardar qualquer coisa, e você pode acessar cada uma delas pelo número (índice).
+Pense em um array como uma fila de caixas numeradas, onde cada caixa pode 
+guardar qualquer coisa, e você pode acessar cada uma delas pelo número (índice).
 
 Índice de Assuntos Abordados:
 1. Arrays em JavaScript
@@ -25,7 +28,6 @@ Pense em um array como uma fila de caixas numeradas, onde cada caixa pode guarda
   - push()
    -pop()
   - splice()
-7. Funções em arrays e objetos
 8. contando quantidade de objetos em um array
 -->
 
@@ -33,8 +35,98 @@ Pense em um array como uma fila de caixas numeradas, onde cada caixa pode guarda
 <html lang="pt-BR">
   <head>
     <script>
+      // 1. Arrays em JavaScript
+      //     - Criação de arrays
+      //     - Acessando valores do array -->
       
-     
+    const arr = ['string', 42, true, { chave: 'valor' }, [1, 2, 3]];
+    console.log(arr); // [] 
+    console.log(arr[0]); // string
+    console.log(arr[1]); // 42
+
+    const arrayString = arr[0];
+    const [string, number ] = arr; // Desestruturação do array
+    console.log(arrayString); // string
+    console.log(string); // string
+    console.log(number); // 42
+
+    const [, numberPulado , , obj] = arr; // Desestruturação do array
+    console.log('numberPulado', numberPulado); // 42
+    console.log('obj', obj); // { chave: 'valor' }
+
+    // 2. Objetos em JavaScript
+    //     - Criação de objetos
+    //       - Acessando valores do objeto
+
+    const obj1 = {
+      chave1: 'valor1',
+      chave2: 'valor2',
+      chave3: 'valor3'
+    };
+
+    console.log(obj1); // { chave1: 'valor1', chave2: 'valor2', chave3: 'valor3' }
+    console.log(obj1.chave2); // valor2
+    console.log(obj1['chave3']); // valor3
+
+
+    // 3. Array de Objetos
+    //     - Estrutura de array contendo objetos
+    //       - Spread operator para copiar e adicionar elementos
+
+    const arrayObjetos = [
+      { id: 1, nome: 'Objeto 1' },
+      { id: 2, nome: 'Objeto 2' }
+    ];
+    console.log('arrayObjetos', arrayObjetos); // [{ id: 1, nome: 'Objeto 1' }, { id: 2, nome: 'Objeto 2' }]
+    console.log('arrayObjetos[0].nome', arrayObjetos[0].nome); // Objeto 1
+    console.log('arrayObjetos[1].id', arrayObjetos[1].id); // 2
+
+    const antigaDieta = [
+      { nome: 'Pizza', preco: 40 },
+      { nome: 'Hambúrguer', preco: 20 }
+    ];
+    console.log('antigaDieta', antigaDieta); // [{ nome: 'Pizza', preco: 30 }, { nome: 'Hambúrguer', preco: 20 }]
+    
+    // Spread operator para copiar e adicionar elementos
+    //   - Copia os elementos do array antigaDieta e adiciona um novo objeto
+    const novaDieta = [
+      ...antigaDieta, // Copia os elementos do array antigaDieta
+      { nome: 'Salada', preco: 15 } 
+    ];
+    console.log('novaDieta', novaDieta); // [{ nome: 'Salada', preco: 15 }]
+
+    // 6. Métodos de array
+    //     - push()
+    //     - pop()
+    //     - splice()
+
+    const frutas = ['maçã', 'banana', 'laranja'];
+    console.log('frutas', frutas); // ['maçã', 'banana', 'laranja']
+    frutas.push('uva'); // Adiciona 'uva' ao final do array
+    console.log('frutas após push', frutas); // ['maçã', 'banana', 'laranja', 'uva']
+    const ultimaFruta = frutas.pop(); // Remove e retorna o último elemento do array
+    console.log('frutas após pop constante', frutas); 
+    console.log(' pop', ultimaFruta);
+    frutas.splice(1, 1); // Remove o elemento na posição 1 (banana)
+    console.log('frutas após splice', frutas); // ['maçã', 'laranja', 'uva']
+    const novasFrutas = ['maçã', 'banana', 'laranja'];
+    novasFrutas.splice(0, 2); 
+
+    const uniaoFrutas = [...frutas, ...novasFrutas]; // União de dois arrays
+    const novaUniaoFrutas = []
+    novaUniaoFrutas.push(frutas)
+    novaUniaoFrutas.push(novasFrutas);
+
+    console.log('uniaoFrutas', uniaoFrutas.length); // ['maçã', 'laranja', 'uva', 'maçã', 'banana', 'laranja']
+    
+    const objetoFruta = {
+      nome: 'maçã',
+      preco: 5
+    };
+
+    console.log('objetoFruta', objetoFruta.length); // undefined
+
+
     </script>
   </head>
   <body>      
