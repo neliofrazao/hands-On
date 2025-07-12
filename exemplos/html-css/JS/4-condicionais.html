@@ -14,6 +14,52 @@
 <html lang="pt-BR">
   <head>
     <script>
+  // Índice dos temas abordados:
+  // 1. Estruturas condicionais (if)
+      const mediaEscolar = (nota) => {
+        if (nota >= 6) {
+          console.log("Aprovado");
+        } else if (nota >= 4) {
+          console.log("Reprovado");
+        } else {
+          console.log("Deu ruim mesmo");
+        }
+      };
+      
+      mediaEscolar(7); // Aprovado
+      mediaEscolar(5); // Reprovado
+      mediaEscolar(1); // Deu ruim mesmo
+
+     if (true) {
+       console.log("Esta é uma estrutura condicional if.");
+     } else {
+       console.log("Esta é a parte else do if.");
+     } 
+   
+  // 2. Estruturas condicionais (if...else)
+  // 3. Operador ternário
+  // 4. Boas práticas em condicionais
+      const ternário = (idade) => {
+        return idade => 18 ? "Maior de idade" : "Menor de idade";
+      };
+      console.log(ternário(true)); // Condição verdadeira
+
+      // Boas práticas:
+      // - Use if...else para condições complexas
+      // - Use operador ternário para condições simples
+      // - Evite aninhar muitos ifs, prefira funções separadas
+      // - Use nomes de variáveis descritivos
+
+      const nome = "João";
+      const saudacao = nome ? `Olá, ${nome}!` : "Olá, visitante!";
+      console.log(saudacao); // Olá, João!
+  // 5. Nullish coalescing operator (??)
+   const nullish = (nome, idade) => {
+      const exemploSemTemplate = 'Olá, meu nome é ' + nome + ' e tenho ' + idade + ' anos.';
+      return `Olá, meu nome é ${nome ?? '--' } e tenho ${idade} anos.`;
+    };
+    console.log(nullish(undefined, 20)); // Olá, meu nome é sem nome
+
       // Desafio crie uma função que recebe um nome e idade e retorna se a pessoa é maior de idade ou não
       
     </script>

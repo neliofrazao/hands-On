@@ -4,7 +4,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-      <script>
+      <script> 
+        // map
+        const numeros = [1, 2, 3, 4, 5];  
+        const numerosDobrados = numeros.map((numero) => numero * 2);
+        console.log(numerosDobrados); // [2, 4, 6]
+
+        const foods = [
+          { name: "Pizza", price: 20 },
+          { name: "Burger", price: 15 },
+          { name: "Salad", price: 10 },
+          { name: "Pasta", price: 18 }
+        ];
+        
+         const foodNames = foods.map((food, index) => {
+            console.log(`Index: ${index}, Food: ${food.name}`);
+            return food.name;
+         });
+      
+        foods[0].name; // Pizza
+        foods[1].name; // Burger
+        foods[2].name; // Salad 
+
+        const pessoas2 = [
+            { nome: "Ana", idade: 22, profissao: "Engenheira" },
+            { nome: "Bruno", idade: 17, profissao: "Estudante" },
+            { nome: "Carla", idade: 19, profissao: "Designer" },
+            { nome: "Diego", idade: 16, profissao: "Estudante" },
+            { nome: "Eduarda", idade: 25, profissao: "Médica" }
+          ];
+
+        const pessoaResulto = undefined
+        const pessoas3 = pessoaResulto ?? [];
+
+        //filter
+        const filter = pessoas2.filter((pessoa) => {
+          return pessoa.idade >= 18;
+        });
+
+        // isso é o mesmo que que condicional IF
+        const filterNovo = pessoas3 && pessoas3.filter((pessoa) => {
+            return pessoa.idade >= 18;
+          });
+        console.log(filter); // [{ nome: "Ana", idade: 22, profissao: "Engenheira" }, { nome: "Carla", idade: 19, profissao: "Designer" }, { nome: "Eduarda", idade: 25, profissao: "Médica" }]
+        console.log(filterNovo)
+
+        
         // Desafio: Percorrer o array e retornar apenas as pessoas maiores de 18 anos
         const pessoas = [
           { nome: "Ana", idade: 22, profissao: "Engenheira" },

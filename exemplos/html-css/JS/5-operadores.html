@@ -9,7 +9,52 @@
 <html lang="pt-BR">
   <head>
     <script>
-    
+      console
+      // 1. Operadores relacionais(==, ===, !==)
+      // == compara valores, === compara valores e tipos
+      // !== verifica se os valores são diferentes
+      const text = 'texto'
+      const booleano = true;
+
+      console.log(!booleano);
+
+         if(typeof booleano !== 'string') {
+          console.log('string verdadeiro')
+         }
+
+         if (typeof text === 'string') {
+            console.log('text verdadeiro')
+          }
+
+          const arr = [];
+          console.log(arr.length); // true
+
+          
+
+      // 2. Operadores lógicos(&&, ||, !)
+      // && (AND) retorna true se ambos os operandos forem verdadeiros
+      if (true && true) {
+        console.log("Ambos são verdadeiros");
+      } else {
+        console.log("Pelo menos um é falso");
+      }
+      // || (OR) retorna true se pelo menos um dos operandos for verdadeiro]
+      if (true || false) {
+        console.log("Pelo menos um é verdadeiro");
+      } else {
+        console.log("Ambos são falsos");
+      }
+      // ! (NOT) inverte o valor lógico do operando
+      const isTrue = true;
+      console.log(!isTrue); // false
+      if (!isTrue) {
+        console.log("isTrue é falso");
+      } else {
+        console.log("isTrue é verdadeiro");
+      }
+
+
+       
     </script>
   </head>
   <body>      
